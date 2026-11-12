@@ -8,18 +8,18 @@ import json, re, sys, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCENES = [
-    ("s1", 6.5, ["Neste Natal, o sol *castiga*.", "E tem quem não tenha *pra onde fugir*."]),
-    ("s2", 6.0, ["O Caramelo vive na rua.", "A água acabou…", "e o calor *não dá trégua*."]),
-    ("s3", 8.0, ["Gente passa o tempo todo…", "e *ninguém para*.", "Mesmo assim, ele ainda espera", "que *alguém se importe*."]),
-    ("s4", 9.0, ["Pra muitos animais como ele,", "esse alguém é a *ASPAN*,", "a Associação de Proteção aos Animais,", "que cuida de *mais de 500* cães e gatos."]),
-    ("s5", 6.5, ["*Ração*, *remédios*, *banho*, *consultas*…", "e muito *carinho*, todos os dias."]),
-    ("s6", 7.0, ["Alguns chegam fracos, doentes,", "*lutando pela vida*.", "E tudo isso *tem um custo*."]),
-    ("s7", 6.0, ["Por isso, neste Natal,", "a *Dog Sweet Home*", "abraçou essa causa."]),
-    ("s8", 6.5, ["Até *31 de dezembro*, estamos arrecadando", "*ração*, *medicamentos*", "e *produtos de higiene*."]),
-    ("s9", 7.5, ["Traga sua doação na Dog Sweet Home,", "em *Capim Macio*.", "Não pode vir?", "A gente *busca na sua casa*."]),
-    ("s10", 6.5, ["Prefere doar em dinheiro?", "Faça um *PIX direto para a ASPAN*.", "A chave está aqui na tela."]),
-    ("s11", 9.5, ["Pra você, *pode ser pouco*.", "Pra eles…", "pode significar *continuar vivendo*."]),
-    ("s12", 7.0, ["*Natal Solidário*:", "Dog Sweet Home e ASPAN.", "Faça parte dessa *corrente do bem*!"]),
+    ("s1", 7.5, ["Neste Natal, enquanto muitos celebram…", "há quem não tenha sequer", "um *lugar seguro* para se abrigar."]),
+    ("s2", 5.5, ["O Caramelo vive nas ruas.", "Falta *água* e *alimento*."]),
+    ("s3", 9.0, ["O tempo passa…", "e, para muitos, *ninguém parece enxergar*.", "Mesmo assim, eles continuam", "*esperando por alguém*."]),
+    ("s4", 9.5, ["Para muitos animais como o Caramelo,", "esse alguém é a *ASPAN*:", "a Associação de Proteção aos Animais,", "que cuida de *mais de 500* cães e gatos."]),
+    ("s5", 7.5, ["*Ração*, *medicamentos*, *higiene*, *consultas*…", "e, acima de tudo,", "*amor e cuidado* todos os dias."]),
+    ("s6", 9.0, ["Alguns chegam debilitados, doentes…", "*lutando por uma chance de viver*.", "E cuidar de tantas vidas", "*tem um custo*."]),
+    ("s7", 6.0, ["Foi por isso que, neste Natal,", "a *Dog Sweet Home*", "decidiu *abraçar essa causa*."]),
+    ("s8", 8.0, ["Até *31 de dezembro*, estamos arrecadando", "*rações*, *medicamentos* e *produtos de higiene*", "para ajudar a *ASPAN*."]),
+    ("s9", 8.5, ["Sua doação pode ser entregue", "na Dog Sweet Home, em *Capim Macio*.", "Não pode vir?", "A gente *busca na sua casa*!"]),
+    ("s10", 7.0, ["Prefere contribuir em dinheiro?", "Faça um *PIX diretamente para a ASPAN*.", "A chave está aqui na tela."]),
+    ("s11", 12.0, ["Talvez, para você,", "seja apenas uma *pequena doação*.", "Mas, para eles…", "pode ser a diferença entre *continuar lutando*", "e ter uma *nova chance de viver*."]),
+    ("s12", 9.0, ["Neste Natal, espalhe *amor*,", "*esperança* e *solidariedade*.", "Dog Sweet Home e ASPAN:", "faça parte dessa *corrente do bem*!"]),
     ("s13", 6.0, []),
 ]
 

@@ -22,3 +22,11 @@ python3 sfx.py fw.json sfx.wav
 (cd render && node render.js 0 92 ../out/video.mp4 30)
 ```
 Depois junte vídeo, música e efeitos com o ffmpeg (`amix` + `loudnorm`).
+
+## Clipes animados (Imagem para vídeo do Canva)
+As páginas 1 a 24 do design seguem a ordem do vídeo, e as notas de cada página têm o texto de movimento.
+Exporte cada página animada como MP4 com o nome `pNN.mp4` e rode:
+```bash
+python3 import_clips.py <pasta_com_os_mp4>
+```
+O motor passa a usar o clipe no lugar da imagem parada (`render/clips.js`).

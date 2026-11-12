@@ -81,34 +81,35 @@ def whistle():
 # --- cena 4: logo e contador
 a, b = S["s4"]; d = b - a
 add(pop(), a + d * .26, .35); add(ding(1568), a + d * .86, .22)
+# --- cena 5: etiquetas
+a, b = S["s5"]; d = b - a
+for i in range(5): add(pop(), a + i * d / 5 + .1, .16, (-.3, .3, -.2, .2, 0)[i])
 # --- cena 6: monitor cardíaco
 a, b = S["s6"]; per = 60 / 72; k = 0
 while a + k * per < b - .3:
     add(beep(), a + k * per + .02, .07, .3); k += 1
-# --- cena 8: transição, itens caindo na caixa, calendário
-a, b = S["s8"]; d = b - a
-add(whoosh(), a - .3, .22)
-for i in range(3):
-    add(pop(), a + .3 + i * .15, .2, (-.5, 0, .5)[i])
-    add(thud(), a + d * (.26 + i * .09) + .75, .32)
-add(ding(1318.5), a + d * .72, .25)
-# --- cena 9: pino no mapa
-a, b = S["s9"]; d = b - a
-add(pop(), a + .61, .4); add(whoosh(.45), a + d * .5 - .2, .12)
-# --- cena 10: transição, digitação da chave, coração
+# --- cena 8: o que doar + calendário
+a, b = S["s8"]; d = b - a; cut = d * .55
+add(pop(), a + .15, .3)
+for i in range(3): add(pop(), a + .55 + i * .2, .2, (-.5, 0, .5)[i])
+add(whoosh(.45), a + cut - .3, .15); add(ding(1318.5), a + cut + .25, .25); add(pop(), a + d * .8, .25)
+# --- cena 9: maquete + van
+a, b = S["s9"]; d = b - a; cut = d * .52
+add(pop(), a + .35, .35); add(pop(), a + .8, .25)
+add(whoosh(.45), a + cut - .3, .14); add(pop(), a + cut + .3, .25); add(pop(), a + cut + .55, .2)
+# --- cena 10: PIX no celular
 a, b = S["s10"]; d = b - a
-add(whoosh(), a - .3, .22)
-for i in range(18):
-    add(tick(), a + .7 + 1.3 * (i + 1) / 18, .5, rng.uniform(-.3, .3))
-add(ding(1760), a + 2.05, .18)
+add(pop(), a + .1, .28)
+for i in range(18): add(tick(), a + .6 + 1.3 * (i + 1) / 18, .5, rng.uniform(-.3, .3))
+add(ding(1760), a + 2.0, .2)
 # --- cena 12: fogos
 for bt in FW:
     if bt > S["s13"][0] - .3: continue
     pan = rng.uniform(-.6, .6)
     add(whistle(), bt - .5, .5, pan); add(boom(), bt, .30, pan)
-# --- cena 13: transição
+# --- cena 13: brilho final
 a, b = S["s13"]
-add(whoosh(), a - .3, .22)
+add(ding(1046.5, 2.5), a + .15, .18); add(ding(1568, 2.5), a + .35, .14)
 
 out = out[: int(TOTAL * SR)]
 peak = np.abs(out).max(); print("pico sfx", round(float(peak), 3))
