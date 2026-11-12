@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:Fredoka;src:url(fonts/fredoka-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:Fredoka;src:url(fonts/fredoka-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:Fredoka;src:url(fonts/fredoka-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:Nunito;src:url(fonts/nunito-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:Nunito;src:url(fonts/nunito-latin-900-normal.woff2);font-weight:900}
+:root{--pink:#E5156B;--pink2:#F23D86;--yellow:#FFD21F;--cream:#FFF7EC;--ink:#2A140C;--green:#0B5A1F;--lime:#B7D532;--lpink:#FCE3EE}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:Fredoka,Nunito,sans-serif;color:var(--ink)}
+.scene{position:absolute;inset:0;overflow:hidden;display:none}
+.ph{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;transform-origin:50% 50%;backface-visibility:hidden}
+.abs{position:absolute}
+.center{left:50%;transform:translateX(-50%)}
+.vign{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%)}
+.botshade{position:absolute;left:0;right:0;bottom:0;height:760px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.42) 60%,rgba(0,0,0,.55))}
+/* ---- cartões estilo card ---- */
+.cream{position:absolute;inset:0;background:var(--cream)}
+.pill{position:absolute;display:flex;align-items:center;gap:18px;background:var(--pink);color:#fff;font-weight:700;border-radius:999px;padding:14px 38px 16px 18px;font-size:58px;box-shadow:0 10px 0 rgba(150,10,60,.18)}
+.pill img{width:84px;height:84px}
+.pill.y{background:var(--yellow);color:var(--ink);box-shadow:0 10px 0 rgba(160,120,0,.2)}
+.card{position:absolute;background:#fff;border-radius:44px;box-shadow:0 18px 40px rgba(120,40,70,.18);border:5px solid #F7C9DB}
+.h1{font-weight:700;font-size:96px;line-height:1;color:var(--pink);text-shadow:0 6px 0 #fff,0 -6px 0 #fff,6px 0 0 #fff,-6px 0 0 #fff,5px 5px 0 #fff,-5px 5px 0 #fff,5px -5px 0 #fff,-5px -5px 0 #fff,0 14px 24px rgba(160,20,80,.25)}
+.chipimg{position:absolute;filter:drop-shadow(0 10px 14px rgba(140,30,70,.25))}
+/* ---- legendas ---- */
+#subs{position:absolute;left:70px;right:70px;top:1395px;text-align:center;font-family:Nunito;font-weight:900;font-size:64px;line-height:1.14;color:#fff;letter-spacing:.2px;
+  paint-order:stroke fill;-webkit-text-stroke:12px rgba(25,8,4,.92);text-shadow:0 8px 22px rgba(0,0,0,.55);z-index:50}
+#subs .hl{color:var(--yellow)}
+#subs .w{display:inline-block;white-space:pre}
+#fx{position:absolute;left:0;top:0;z-index:40;pointer-events:none}
+#fade{position:absolute;inset:0;background:#000;z-index:60;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="fx" width="1080" height="1920"></canvas>
+  <div id="subs"></div>
+  <div id="fade"></div>
+</div>
+<script src="timeline.js"></script>
+<script src="pos.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
